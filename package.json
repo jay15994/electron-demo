@@ -1,0 +1,46 @@
+{
+  "name": "electron-demo",
+  "version": "1.0.0",
+  "description": "description",
+  "main": "./src/index.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "electron ./src",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "electron-demo-id",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^7.1.10",
+    "electron-builder": "^22.3.2"
+  },
+  "dependencies": {}
+}
